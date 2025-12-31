@@ -3,7 +3,7 @@ const menuItems = [
     {
         id: 1,
         name: "Truffle Burger",
-        price: 18.99,
+        price: 999,
         category: "burger",
         desc: "Wagyu beef with black truffle mayo.",
         img: "./images/truffle-burger.png"
@@ -11,7 +11,7 @@ const menuItems = [
     {
         id: 2,
         name: "Margherita Supreme",
-        price: 15.50,
+        price: 799,
         category: "pizza",
         desc: "San Marzano tomato sauce, fresh buffalo mozzarella.",
         img: "./images/margherita.png"
@@ -19,7 +19,7 @@ const menuItems = [
     {
         id: 3,
         name: "Dragon Roll",
-        price: 22.00,
+        price: 1299,
         category: "sushi",
         desc: "Eel and cucumber topped with avocado.",
         img: "./images/dragon-roll.png"
@@ -27,7 +27,7 @@ const menuItems = [
     {
         id: 4,
         name: "Molten Lava Cake",
-        price: 12.00,
+        price: 349,
         category: "dessert",
         desc: "Rich chocolate cake with a gooey center.",
         img: "./images/lava-cake.png"
@@ -35,7 +35,7 @@ const menuItems = [
     {
         id: 5,
         name: "Smashed Avo Burger",
-        price: 16.50,
+        price: 649,
         category: "burger",
         desc: "Double patty with fresh smashed avocado.",
         img: "./images/avo-burger.png"
@@ -43,7 +43,7 @@ const menuItems = [
     {
         id: 6,
         name: "Pepperoni Feast",
-        price: 17.00,
+        price: 899,
         category: "pizza",
         desc: "Double pepperoni with extra cheese.",
         img: "./images/pepperoni.png"
@@ -51,7 +51,7 @@ const menuItems = [
     {
         id: 7,
         name: "Crispy Samosa",
-        price: 5.99,
+        price: 149,
         category: "indian",
         desc: "Golden fried pastry filled with spiced potatoes and peas.",
         img: "./images/samosa.png"
@@ -59,7 +59,7 @@ const menuItems = [
     {
         id: 8,
         name: "Veg Chowmein",
-        price: 10.50,
+        price: 299,
         category: "chinese",
         desc: "Stir-fried noodles with fresh vegetables and soy sauce.",
         img: "./images/chowmein.png"
@@ -67,7 +67,7 @@ const menuItems = [
     {
         id: 9,
         name: "Aloo Tikki Burger",
-        price: 9.00,
+        price: 199,
         category: "burger",
         desc: "Spiced potato patty with mint chutney and onions.",
         img: "./images/aloo-tikki.jpg"
@@ -75,7 +75,7 @@ const menuItems = [
     {
         id: 10,
         name: "Butter Chicken",
-        price: 16.99,
+        price: 499,
         category: "indian",
         desc: "Tender chicken in a rich tomato and butter sauce.",
         img: "./images/butter-chicken.jpg"
@@ -83,7 +83,7 @@ const menuItems = [
     {
         id: 11,
         name: "Paneer Tikka Masala",
-        price: 14.50,
+        price: 449,
         category: "indian",
         desc: "Grilled paneer cubes in spicy gravy.",
         img: "./images/paneer-tikka.jpg"
@@ -91,7 +91,7 @@ const menuItems = [
     {
         id: 12,
         name: "Chicken Biryani",
-        price: 15.99,
+        price: 399,
         category: "indian",
         desc: "Aromatic basmati rice cooked with spiced chicken.",
         img: "./images/biryani.jpg"
@@ -99,7 +99,7 @@ const menuItems = [
     {
         id: 13,
         name: "Spring Rolls",
-        price: 6.50,
+        price: 249,
         category: "chinese",
         desc: "Crispy rolls filled with vegetables.",
         img: "./images/spring-rolls.jpg"
@@ -107,7 +107,7 @@ const menuItems = [
     {
         id: 14,
         name: "Veg Manchurian",
-        price: 11.50,
+        price: 299,
         category: "chinese",
         desc: "Fried vegetable balls in spicy tangy sauce.",
         img: "./images/manchurian.jpg"
@@ -115,7 +115,7 @@ const menuItems = [
     {
         id: 15,
         name: "Fried Rice",
-        price: 9.50,
+        price: 249,
         category: "chinese",
         desc: "Wok-tossed rice with veggies and soy sauce.",
         img: "./images/fried-rice.jpg"
@@ -123,7 +123,7 @@ const menuItems = [
     {
         id: 16,
         name: "California Roll",
-        price: 8.99,
+        price: 699,
         category: "sushi",
         desc: "Crab, avocado, and cucumber rolled in rice.",
         img: "./images/california-roll.jpg"
@@ -131,7 +131,7 @@ const menuItems = [
     {
         id: 17,
         name: "Salmon Nigiri",
-        price: 7.50,
+        price: 599,
         category: "sushi",
         desc: "Fresh salmon slice over pressed vinegared rice.",
         img: "./images/salmon-nigiri.jpg"
@@ -139,7 +139,7 @@ const menuItems = [
     {
         id: 18,
         name: "Tuna Sashimi",
-        price: 9.99,
+        price: 799,
         category: "sushi",
         desc: "Fresh slices of premium tuna.",
         img: "./images/tuna-sashimi.jpg"
@@ -147,7 +147,7 @@ const menuItems = [
     {
         id: 19,
         name: "Tiramisu",
-        price: 8.50,
+        price: 399,
         category: "dessert",
         desc: "Classic Italian coffee-flavored dessert.",
         img: "./images/tiramisu.jpg"
@@ -155,7 +155,7 @@ const menuItems = [
     {
         id: 20,
         name: "Cheesecake",
-        price: 7.99,
+        price: 299,
         category: "dessert",
         desc: "Creamy cheesecake with a graham cracker crust.",
         img: "./images/cheesecake.jpg"
@@ -163,7 +163,7 @@ const menuItems = [
     {
         id: 21,
         name: "Chocolate Brownie",
-        price: 6.50,
+        price: 199,
         category: "dessert",
         desc: "Warm chocolate brownie with walnuts.",
         img: "./images/brownie.jpg"
@@ -269,7 +269,7 @@ function renderMenu(category) {
             <div class="food-info">
                 <div class="food-meta">
                     <h3>${item.name}</h3>
-                    <div class="price">$${item.price.toFixed(2)}</div>
+                    <div class="price">₹${item.price.toFixed(2)}</div>
                 </div>
                 <p>${item.desc}</p>
                 <button class="${buttonClass}" data-id="${item.id}" onclick="addToCart(${item.id})">
@@ -343,7 +343,7 @@ function updateCartUI() {
                 <img src="${item.img}" alt="${item.name}" onerror="this.src='./images/coming-soon.png'">
                 <div class="cart-item-info">
                     <h4>${item.name}</h4>
-                    <div class="cart-item-price">$${item.price.toFixed(2)} x ${item.qty}</div>
+                    <div class="cart-item-price">₹${item.price.toFixed(2)} x ${item.qty}</div>
                 </div>
                 <button class="remove-item" onclick="removeFromCart(${item.id})">
                     <i class="fa-solid fa-trash"></i>
@@ -354,7 +354,7 @@ function updateCartUI() {
     }
 
     // Update Total
-    cartTotal.innerText = '$' + totalPrice.toFixed(2);
+    cartTotal.innerText = '₹' + totalPrice.toFixed(2);
 }
 
 // Toggle Cart

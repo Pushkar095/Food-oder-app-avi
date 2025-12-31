@@ -567,19 +567,9 @@ body {
     display: none;
   }
 
-  /* Search Bar adjustments for mobile */
+  /* Search Bar - hide on mobile */
   .search-bar {
-    padding: 8px 15px;
-    max-width: 100%;
-    /* Flexible width */
-  }
-
-  .search-bar input {
-    font-size: 0.9rem;
-    width: 100%;
-    /* ensure it shrinks */
-    min-width: 50px;
-    /* prevent total collapse */
+    display: none;
   }
 
   /* Hide login text on mobile, just show icon if we had one, 
