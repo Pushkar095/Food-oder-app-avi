@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Gourmet Go</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .back-btn i {
+            font-size: 1.2rem;
+        }
+
+        .back-btn:hover {
+            opacity: 1;
+            transform: translateX(-5px);
+            color: var(--primary);
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+            /* Space for back button on mobile */
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-header .logo {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .auth-tabs {
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 5px;
+            margin-bottom: 30px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: var(--transition);
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .auth-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-white);
+            font-size: 0.9rem;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-gray);
+        }
+
+        .input-group .form-input {
+            width: 100%;
+            padding: 14px 15px 14px 50px;
+            /* Increased left padding to 50px to prevent overlap */
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-sizing: border-box;
+            /* Crucial for width/padding */
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 10px rgba(255, 71, 87, 0.2);
+        }
+
+        .auth-btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .auth-footer {
+            margin-top: 25px;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .auth-footer a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        #signup-fields {
+            display: none;
+        }
+
+        .error-msg {
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auth-container">
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Home
+        </a>
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="logo">Gourmet<span class="highlight">&nbsp;Go</span>.</a>
+                <h2 id="auth-title">Welcome Back!</h2>
+                <p id="auth-subtitle" style="color: var(--text-gray); margin-top: 8px;">Order your favorite meals in
+                    seconds.</p>
+            </div>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" onclick="switchTab('login')">Login</div>
+                <div class="auth-tab" onclick="switchTab('signup')">Sign Up</div>
+            </div>
+
+            <div id="error-box" class="error-msg"></div>
+
+            <form id="auth-form">
+                <div class="form-group" id="name-field" style="display: none;">
+                    <label class="form-label">Full Name</label>
+                    <div class="input-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="user-name" class="form-input" placeholder="Enter your name">
+                    </div>
+                </div>
+
+                <div class="form-group" id="mobile-field" style="display: none;">
+                    <label class="form-label">Mobile Number</label>
+                    <div class="input-group">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="user-mobile" class="form-input" placeholder="9876543210" maxlength="10">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" id="id-label">Email or Mobile Number</label>
+                    <div class="input-group">
+                        <i class="fa-solid fa-envelope" id="id-icon"></i>
+                        <input type="text" id="user-id" class="form-input" placeholder="email@example.com or 9876543210"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="user-password" class="form-input" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary auth-btn" id="submit-btn">Login</button>
+            </form>
+
+            <div class="auth-footer">
+                <span id="footer-text">Don't have an account?</span>
+                <a href="javascript:void(0)" id="footer-link" onclick="switchTab('signup')">Sign Up now</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+
+</html>

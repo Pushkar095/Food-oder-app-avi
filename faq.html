@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Gourmet Go</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .faq-hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(255, 71, 87, 0.1), transparent);
+        }
+
+        .faq-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 71, 87, 0.3);
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-category {
+            margin-bottom: 50px;
+        }
+
+        .faq-category h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Gourmet<span class="highlight">Go</span>.</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#menu">Menu</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Hero -->
+    <header class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked <span class="gradient-text">Questions</span></h1>
+            <p>Find answers to common questions about our service</p>
+        </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+
+                <div class="faq-category">
+                    <h2>Ordering & Delivery</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I place an order?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Simply browse our menu, add items to your cart, and proceed to checkout. You can create an
+                            account or checkout as a guest. Enter your delivery address and payment details to complete
+                            your order.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What are your delivery hours?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We deliver from 10:00 AM to 11:00 PM, seven days a week. Some partner restaurants may have
+                            different operating hours.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How long does delivery take?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Our average delivery time is 30-45 minutes. You'll receive real-time updates on your order
+                            status through our app and SMS notifications.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What is your delivery area?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We currently deliver within a 10-mile radius of our partner restaurants. Enter your address
+                            at checkout to confirm delivery availability.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2>Payment & Pricing</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What payment methods do you accept?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We accept all major credit cards (Visa, MasterCard, American Express), debit cards, PayPal,
+                            Apple Pay, and Google Pay. Cash on delivery is also available in select areas.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Are there any delivery fees?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Delivery fees vary based on distance and order size. Orders over $30 qualify for free
+                            delivery. You'll see the exact delivery fee before confirming your order.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do you offer discounts or promotions?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We regularly offer promotional codes, first-time user discounts, and loyalty rewards.
+                            Subscribe to our newsletter to stay updated on the latest deals.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2>Food Quality & Safety</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do you ensure food quality?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We partner only with certified restaurants and use advanced thermal packaging to maintain
+                            optimal temperature. Our delivery fleet follows strict hygiene protocols.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I customize my order?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! You can add special instructions for each item, request ingredient
+                            modifications, and specify dietary preferences during checkout.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What if I have food allergies?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Each menu item includes detailed ingredient information. You can also add allergy notes to
+                            your order, and we'll communicate them directly to the restaurant.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2>Returns & Support</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What if my order is incorrect or damaged?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Contact our support team immediately through the app or website. We'll arrange a replacement
+                            or full refund within 24 hours.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I cancel my order?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Orders can be cancelled within 5 minutes of placement for a full refund. After preparation
+                            begins, cancellations may incur a fee.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I contact customer support?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Reach us via email at hello@gourmetgo.com, call +1 (555) 123-4567, or use the live chat
+                            feature on our website. We're available 24/7.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo footer-logo">Gourmet<span class="highlight">Go</span>.</a>
+                    <p>Elevating your dining experience with premium flavors delivered with speed and care. Taste the
+                        extraordinary every day.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#menu">Our Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-location-dot"
+                                    style="margin-right: 10px; color: var(--primary);"></i> 123 Gourmet St, Food
+                                City</a></li>
+                        <li><a href="mailto:hello@gourmetgo.com"><i class="fa-solid fa-envelope"
+                                    style="margin-right: 10px; color: var(--primary);"></i> hello@gourmetgo.com</a></li>
+                        <li><a href="tel:+15551234567"><i class="fa-solid fa-phone"
+                                    style="margin-right: 10px; color: var(--primary);"></i> +1 (555) 123-4567</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gourmet Go. All rights reserved. Elevating Delivery.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <div class="empty-cart-msg">Your cart is empty.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
