@@ -291,7 +291,7 @@ body {
     gap: 10px;
     padding: 0 10px;
   }
-  
+
   .cat-btn {
     padding: 8px 18px;
     font-size: 0.9rem;
@@ -320,6 +320,34 @@ body {
   transform: translateY(-10px);
   box-shadow: var(--shadow);
   border-color: rgba(255, 71, 87, 0.3);
+}
+
+.wishlist-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.wishlist-btn:hover {
+  background: rgba(255, 71, 87, 0.8);
+  transform: scale(1.1);
+}
+
+.wishlist-btn i {
+  color: white;
+  font-size: 1rem;
 }
 
 .food-card img {
@@ -523,9 +551,78 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .navbar {
-    padding: 15px 0;
+    padding: 10px 0;
   }
 
+  .navbar .container {
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Search Bar adjustments for mobile */
+  .search-bar {
+    padding: 8px 15px;
+    max-width: 100%;
+    /* Flexible width */
+  }
+
+  .search-bar input {
+    font-size: 0.9rem;
+    width: 100%;
+    /* ensure it shrinks */
+    min-width: 50px;
+    /* prevent total collapse */
+  }
+
+  /* Hide login text on mobile, just show icon if we had one, 
+     but since it's a button, let's just make it smaller or hide it if needed. 
+     For now, let's keep it but reduce padding */
+  .btn-primary {
+    padding: 8px 15px !important;
+    font-size: 0.8rem !important;
+  }
+
+  #nav-auth-btn {
+    margin-left: 10px !important;
+  }
+
+  .user-profile span {
+    display: none;
+    /* Hide user name on mobile, show only icon/avatar */
+  }
+
+  .nav-icons {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* On very small screens, maybe hide search bar placehoder or just show icon? 
+       For now, let's shrink logo and search further */
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .search-bar {
+    padding: 8px 10px;
+  }
+
+  .search-bar input::placeholder {
+    color: transparent;
+    /* visually hide placeholder text to save space */
+  }
+}
+
+@media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -543,12 +640,6 @@ body {
 
   .hero-image {
     display: none;
-    /* Hide image on mobile for cleaner look or make smaller */
-  }
-
-  .nav-links {
-    display: none;
-    /* simple mobile hide for now */
   }
 }
 
@@ -556,7 +647,7 @@ body {
   .hero-text h1 {
     font-size: 2.2rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
@@ -874,4 +965,43 @@ body {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Search Bar Styles (Restored & Refined) */
+.nav-middle {
+  /* flex-grow: 1; */
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: #252538;
+  /* Dark/solid bg as per image */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-bar i {
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: var(--text-white);
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.search-bar input::placeholder {
+  color: #666;
 }

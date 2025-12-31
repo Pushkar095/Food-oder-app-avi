@@ -222,12 +222,11 @@ function updateNavBar() {
 }
 
 function logout() {
-    if (confirm('Are you sure you want to logout?')) {
-        localStorage.removeItem('gourmet_current_user');
-        currentUser = null;
-        updateNavBar();
-        window.location.reload();
-    }
+    // Direct logout without popup to prevent issues
+    localStorage.removeItem('gourmet_current_user');
+    currentUser = null;
+    updateNavBar();
+    window.location.reload();
 }
 
 // Category Filtering
@@ -264,6 +263,9 @@ function renderMenu(category) {
 
         card.innerHTML = `
             <img src="${item.img}" alt="${item.name}" onerror="this.src='./images/coming-soon.png'">
+            <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+            </button>
             <div class="food-info">
                 <div class="food-meta">
                     <h3>${item.name}</h3>
@@ -441,4 +443,17 @@ function typeWriterEffect() {
     }
 
     startTyping();
+}
+
+function toggleWishlist(btn) {
+    const icon = btn.querySelector('i');
+    if (icon.classList.contains('fa-regular')) {
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid');
+        icon.style.color = 'var(--primary)';
+    } else {
+        icon.classList.remove('fa-solid');
+        icon.classList.add('fa-regular');
+        icon.style.color = 'white';
+    }
 }
